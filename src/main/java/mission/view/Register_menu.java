@@ -1,6 +1,6 @@
 package mission.view;
 
-import mission.controller.Register_user;
+import mission.controller.Get_user;
 
 import java.util.Scanner;
 
@@ -17,6 +17,6 @@ public class Register_menu {
         System.out.println("전화번호를 입력해주세요. (ex. 010-1234-1234)");
         String phone = scanner.nextLine();
 
-        Register_user.register_user(name, phone);
+        Get_user.register_user(name, phone);
   }
 }
