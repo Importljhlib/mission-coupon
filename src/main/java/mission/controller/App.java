@@ -1,7 +1,7 @@
 package mission.controller;
 
 import mission.view.Register_menu;
-import mission.view.coupon_search_menu;
+import mission.view.Coupon_search_menu;
 
 import java.util.Scanner;
 
@@ -13,7 +13,9 @@ public class App {
                 Register_menu.main();
                 break;
             case 2:
-                coupon_search_menu.main();
+                Coupon_search_menu.main(choice);
+            case 3:
+                Coupon_search_menu.main(choice);
         }
     }
 }

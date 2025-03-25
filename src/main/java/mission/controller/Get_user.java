@@ -2,6 +2,7 @@ package mission.controller;
 
 import mission.model.User_model;
 import mission.model.Duplicate_checker;
+import mission.view.Menu;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +23,17 @@ public class Get_user {
                 .map(user -> user.coupon_count)
                 .findFirst()
                 .orElse(-1);
+    }
 
+    public static void save_coupon(String name, String coupon_number, int save_num) {
+        User_model.user_database.getOrDefault(coupon_number, new ArrayList<>())
+                .stream()
+                .filter(user -> user.name.equals(name))
+                .findFirst()
+                .ifPresent(user -> {
+                    user.coupon_count += save_num;
+                    System.out.println("쿠폰이 적립되었습니다.");
+                    Menu.main();
+                });
     }
 }
