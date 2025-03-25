@@ -14,8 +14,14 @@ public class App {
                 break;
             case 2:
                 Coupon_search_menu.main(choice);
+                break;
             case 3:
                 Coupon_search_menu.main(choice);
+                break;
+            case 4:
+                Coupon_search_menu.main(choice);
+            case 5:
+              System.exit(0);
         }
     }
 }

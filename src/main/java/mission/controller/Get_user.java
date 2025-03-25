@@ -36,4 +36,23 @@ public class Get_user {
                     Menu.main();
                 });
     }
+
+    public static void use_coupon(String name, String coupon_number, int use_num) {
+        User_model.user_database.getOrDefault(coupon_number, new ArrayList<>())
+                .stream()
+                .filter(user -> user.name.equals(name))
+                .findFirst()
+                .ifPresentOrElse(
+                        user -> {
+                            if (user.coupon_count >= use_num) {
+                                user.coupon_count -= use_num;
+                                System.out.println("쿠폰이 사용되었습니다.");
+                                Menu.main();
+                            }
+                        },
+                        () -> System.out.println("해당 사용자를 찾을 수 없습니다.")
+                );
+    }
+
+
 }

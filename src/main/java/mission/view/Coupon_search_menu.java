@@ -43,9 +43,11 @@ public class Coupon_search_menu {
             int cnt = Get_user.find_coupon_count(name, coupon_number);
             System.out.println("현재 적립된 쿠폰은 "+cnt+"개 입니다.");
 
-            if (num == 3){
+            if (num == 3)
                 Coupon_save_menu.coupon_save_menu(name, coupon_number);
-            }
+            else if (num == 4)
+                Coupon_use_menu.coupon_use_menu(name, coupon_number);
+
         }
     }
 
@@ -56,8 +58,10 @@ public class Coupon_search_menu {
 
         System.out.println("현재 적립된 쿠폰은 "+cnt+"개 입니다.");
 
-        if (num == 3){
+        if (num == 3)
             Coupon_save_menu.coupon_save_menu(input, coupon_number);
-        }
+        else if (num == 4)
+            Coupon_use_menu.coupon_use_menu(input, coupon_number);
+
     }
 }
